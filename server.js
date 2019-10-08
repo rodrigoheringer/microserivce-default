@@ -12,7 +12,7 @@ const createServer = ({ package, defaultRouter, defaultRouterPath }) => {
     server.use(bodyParser.json());
     configureLogger(server, environment.TRACE_HEADER, environment.TRACE_UNIQUE_HEADER_ID, environment.LOG_LEVEL);
     server.use(environment.DEFAULT_INFO_ROUTE, createDefaultApi({ package }));
-    server.use(defaultRouterPath, defaultRouter);
+    server.use(`/${defaultRouterPath || package.name}`, defaultRouter);
     server.use(errorHandler);
     server.listen(environment.API_PORT, undefined, () => {
         console.log(`listening on port ${environment.API_PORT}`);

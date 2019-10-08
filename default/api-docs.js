@@ -8,7 +8,7 @@ module.exports = ({server, package}) => {
                 title: name,
                 version
             },
-            basePath: `/${name}/v${package.version.split('.')[0]}`,
+            basePath: `/${name}`,
             produces: [
                 "application/json"
             ],
