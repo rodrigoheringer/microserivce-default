@@ -9,11 +9,12 @@ class EnvironmentHandler {
         }
     }
 
-    static parseEnv(obj) {
-        return Object.entries(obj).reduce((all, curr) => {
+    static updateEnvValues(obj) {
+        Object.entries(obj).reduce((all, curr) => {
             all[curr[0]] = EnvironmentHandler.getEnv(curr[0], curr[1]);
             return all;
-        }, {});
+        }, obj);
+        return obj;
     }
 }
 
