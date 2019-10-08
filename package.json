@@ -1,5 +1,5 @@
 {
-  "name": "@bvs/microservices-default",
+  "name": "microservices-default",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
