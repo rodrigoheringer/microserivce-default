@@ -1,4 +1,4 @@
-const {updateEnvValues: parseEnv} = require('../utils/environment-handler');
+const {updateEnvValues: parseEnv} = require('../util/environment-handler');
 
 const env = {
     API_PORT: 3000,
