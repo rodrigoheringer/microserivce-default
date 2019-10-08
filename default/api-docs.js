@@ -14,8 +14,8 @@ module.exports = ({server, package}) => {
             ],
             schemes: ['http']
         },
-        basedir: __dirname, //app absolute path
-        files: [__dirname + '/src/**/route.js'] //Path to the API handle folder
+        basedir: __dirname + '../../../../', //app absolute path
+        files: [__dirname + '../../../../src/**/route.js'] //Path to the API handle folder
     };
     expressSwagger(options);
 };
