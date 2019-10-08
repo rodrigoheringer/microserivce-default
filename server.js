@@ -2,16 +2,16 @@ const express = require('express');
 const server = express();
 const bodyParser = require('body-parser');
 const environment = require('./environment/environment');
-const defaults = require('./default');
+const { createDefaultApi } = require('./default/default-api');
 const enableApiDocs = require('./default/api-docs');
-const configureLogger = require('./default/log');
+const configureLogger = require('./default/log/configure-logger');
 const { errorHandler } = require('./util/error-handler');
 
-const createServer = () => {
-    enableApiDocs(server);
+const createServer = ({package}) => {
+    enableApiDocs({server, package});
     server.use(bodyParser.json());
     configureLogger(server, environment.TRACE_HEADER, environment.TRACE_UNIQUE_HEADER_ID, environment.LOG_LEVEL);
-    server.use(environment.DEFAULT_INFO_ROUTE, defaults.defaultApi);
+    server.use(environment.DEFAULT_INFO_ROUTE, createDefaultApi({package}));
     server.use(errorHandler);
     server.listen(environment.API_PORT, undefined, () => {
         console.log(`listening on port ${environment.API_PORT}`);

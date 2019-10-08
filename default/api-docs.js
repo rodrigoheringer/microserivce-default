@@ -1,6 +1,5 @@
-const package = require('../../package.json');
-const { name, version, description } = package;
-module.exports = (server) => {
+module.exports = ({server, package}) => {
+    const { name, version, description } = package;
     const expressSwagger = require('express-swagger-generator')(server);
     let options = {
         swaggerDefinition: {

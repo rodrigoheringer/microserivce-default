@@ -4,7 +4,7 @@ const contextMiddleware = require('./context-middleware');
 const morgan = require('morgan');
 
 module.exports = (server, headerName, uniqueIdHeader, loglevel = 'TRACE') => {
-    morgan.token(uniqueIdHeader, (req) => {
+    morgan.token(uniqueIdHeader, () => {
         return httpContext.get(uniqueIdHeader);
     });
     server.use(httpContext.middleware);
