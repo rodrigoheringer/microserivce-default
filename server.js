@@ -8,7 +8,6 @@ const configureLogger = require('./default/log');
 const { errorHandler } = require('./util/error-handler');
 
 const createServer = () => {
-
     enableApiDocs(server);
     server.use(bodyParser.json());
     configureLogger(server, environment.TRACE_HEADER, environment.TRACE_UNIQUE_HEADER_ID, environment.LOG_LEVEL);
