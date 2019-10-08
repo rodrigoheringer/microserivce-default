@@ -21,4 +21,3 @@ const createServer = () => {
 };
 
 module.exports = { createServer };
-export { createServer };
