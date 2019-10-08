@@ -1,4 +1,4 @@
-const {updateEnvValues: parseEnv} = require('../util/environment-handler');
+const {updateEnvValues} = require('../util/environment-handler');
 
 const env = {
     API_PORT: 3000,
@@ -8,6 +8,6 @@ const env = {
     DEFAULT_INFO_ROUTE: 'info'
 };
 
-parseEnv(env);
+updateEnvValues(env);
 
 module.exports = env;
