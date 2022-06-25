@@ -16,7 +16,7 @@
     "express-swagger-generator": "1.1.15",
     "loglevel": "1.6.3",
     "morgan": "1.9.1",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.7",
     "swagger-jsdoc": "3.2.9",
     "swagger-ui-express": "4.0.6",
     "uuid": "3.3.3"
